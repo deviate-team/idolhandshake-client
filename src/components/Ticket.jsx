@@ -36,9 +36,11 @@ export default function Ticket({
               <p>{timeInterval}</p>
             </div>
           </div>
-          <div className="m-auto">
-            <QRCodeSVG value={id} />
-          </div>
+          {isOwner && (
+            <div className="m-auto">
+              <QRCodeSVG value={id} />
+            </div>
+          )}
         </div>
         <div className="flex justify-center text-white font-bold">
           <div
@@ -67,10 +69,12 @@ export default function Ticket({
                     href="/"
                     className="flex text-base px-6 py-2 leading-none text-white mt-0"
                   >
-                    Buy{" "}
-                    <div className="ml-2 text-sm flex items-center">
-                      <img src="/eth-currency.svg" className="w-4 h-4" />
-                      <span className="text-sm text-gray-900">{price}</span>
+                    <div className="ml-2 text-sm flex items-baseline space-x-2">
+                      <span className="uppercase">Buy</span>
+                      {/* <img src="/eth-currency.svg" className="w-4 h-4" /> */}
+                      <span className=" text-gray-900 text-sm font-bold">
+                        {price}
+                      </span>
                     </div>
                   </a>
                 </button>

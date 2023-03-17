@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Ticket from "../components/Ticket.jsx";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout title="your-ticket">
+  <Navbar />
+
   <div class="text-white">
     <h1 class="text-6xl px-24 pt-6">Your Ticket</h1>
     <div class="mx-auto my-20 flex justify-center">
@@ -18,6 +21,7 @@ import Ticket from "../components/Ticket.jsx";
           price="100"
           isOwner={true}
           id="13548646548694"
+          client:load
         />
         <Ticket
           dueDate="TUESDAY JUNE 29TH 2021"
@@ -29,6 +33,7 @@ import Ticket from "../components/Ticket.jsx";
           price="100"
           isOwner={true}
           id="56465465464"
+          client:load
         />
       </div>
     </div>
