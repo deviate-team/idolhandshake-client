@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import CreateForm from '../components/CreateForm';
+---
+
+<Layout title='Create Event'>
+  <Navbar />
+  <CreateForm client:only />
+</Layout>

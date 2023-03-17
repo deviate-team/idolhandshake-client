@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Card from '../components/Card.astro';
 import Banner from '../components/Banner.astro';
+import { Event } from '../constants/Event';
 ---
 
 <Layout title='Home'>
@@ -13,12 +14,18 @@ import Banner from '../components/Banner.astro';
       <div
         class='grid grid-flow-row gap-8 justify-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
       >
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          Event &&
+            Event.map((val) => (
+              <Card
+                image={val.image}
+                title={val.title}
+                description={val.description}
+                price={val.price}
+                date={val.date}
+              />
+            ))
+        }
       </div>
     </div>
   </main>
