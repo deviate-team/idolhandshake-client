@@ -7,9 +7,11 @@ import Ticket from "../components/Ticket.astro";
 <Layout title="ticketdetail">
   <div class="font-Kanit text-white">
     <Navbar />
-    <div
-      class="absolute z-0 h-[300px] w-full opacity-30 bg-[url('https://mpics.mgronline.com/pics/Images/566000001310502.JPEG')] bg-fixed"
-    >
+    <div class="fixed z-0 w-full">
+      <div
+        class="absolute h-[300px] w-full opacity-20 bg-[url('https://mpics.mgronline.com/pics/Images/566000001310502.JPEG')] bg-cover"
+      >
+      </div>
     </div>
     <div class="flex justify-center absolute z-10 top-64">
       <!-- Left -->
@@ -35,11 +37,15 @@ import Ticket from "../components/Ticket.astro";
       </div>
       <!-- Right -->
       <div class="w-1/2 p-6">
-        <h1 class="text-5xl font-bold my-8">Title</h1>
+        <h1 class="text-5xl font-bold my-8">OHM HAND SHAKE</h1>
         <div class="flex flex-col justify-center">
-          <Ticket />
-          <Ticket />
-          <Ticket />
+          <Ticket
+            dueDate="TUESDAY JUNE 29TH 2021"
+            place="KMITL"
+            timeInterval="8:00 PM TO 11:00 PM"
+            title="OHM HAND SHAKE 5s"
+            imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
+          />
         </div>
       </div>
     </div>
