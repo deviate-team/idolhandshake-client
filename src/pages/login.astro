@@ -1,50 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import LoginForm from '../components/LoginForm';
 ---
 
-<Layout title="Login">
-  <div class="flex justify-center h-[750px] px-6 my-5 items-center">
-    <div class="w-4/6 lg:w-1/3 h-max bg-white p-5 rounded-lg">
-      <h3 class="pt-4 text-2xl text-center">Login!</h3>
-      <form>
-        <div>
-          <label class="block mb-2 text-second-color">Email</label>
-          <input
-            class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            id="username"
-            type="email"
-            placeholder="Ex. test@email.com"
-          />
-        </div>
-        <div>
-          <label class="block mb-2 text-second-color">Password</label>
-          <input
-            class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-            id="password"
-            type="password"
-            placeholder="******************"
-          />
-        </div>
-        <div>
-          <button
-            class="w-full px-4 py-2 font-bold text-white bg-second-color rounded-full hover:bg-third-color focus:outline-none focus:shadow-outline"
-            type="button"
-            onclick="login()"
-          >
-            Login
-          </button>
-        </div>
-      </form>
-      <div class="my-5 flex flex-col sm:flex-row justify-between">
-        <a
-          class="text-second-color hover:text-third-color text-sm float-left"
-          href="#">Forgot Password?</a
-        >
-        <a
-          class="text-second-color hover:text-third-color text-sm float-right"
-          href="/register">Create Account</a
-        >
-      </div>
-    </div>
-  </div>
+<Layout title='Login'>
+  <LoginForm client:only />
 </Layout>
