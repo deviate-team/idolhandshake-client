@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Ticket from "../components/Ticket.astro";
-
-const { title, description, place, dueDate, timeInterval } = Astro.props;
 ---
 
 <Layout title="ticketdetail">
@@ -15,9 +13,11 @@ const { title, description, place, dueDate, timeInterval } = Astro.props;
       >
       </div>
     </div>
-    <div class="flex justify-center absolute z-10 top-64">
+    <div
+      class="flex flex-col lg:flex-row justify-center items-center absolute z-10 w-full lg:top-64"
+    >
       <!-- Left -->
-      <div class="w-1/4 mr-10">
+      <div class="w-4/6 lg:w-1/4 mr-10">
         <img
           src="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
           alt="Sunset in the mountains"
@@ -38,7 +38,7 @@ const { title, description, place, dueDate, timeInterval } = Astro.props;
         </div>
       </div>
       <!-- Right -->
-      <div class="w-1/2 p-6">
+      <div class="w-4/6 lg:w-1/2 lg:p-6">
         <h1 class="text-5xl font-bold my-8">OHM HAND SHAKE</h1>
         <div class="flex flex-col justify-center">
           <Ticket
