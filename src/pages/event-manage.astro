@@ -1,23 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
 import Card from "../components/Card.astro";
-import Banner from "../components/Banner.astro";
 import { Event } from "../constants/Event";
 ---
 
-<Layout title="Home">
-  <main>
-    <Navbar />
-    <Banner />
-    <div class="container mx-auto max-w-7xl my-20">
+<Layout title="event-manage">
+  <div class="text-white">
+    <h1 class="text-6xl px-24 pt-6">Your Events</h1>
+    <div class="container mx-auto my-20 flex justify-center">
       <div
-        class="grid grid-flow-row gap-8 justify-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        class="grid grid-flow-row gap-8 justify-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
       >
         {
           Event &&
             Event.map((val, index) => (
-              <a href="/event">
+              <>
                 <Card
                   key={index}
                   image={val.image}
@@ -25,6 +22,7 @@ import { Event } from "../constants/Event";
                   description={val.description}
                   price={val.price}
                   date={val.date}
+                  isOrganizer={true}
                 />
                 <Card
                   key={index}
@@ -33,11 +31,12 @@ import { Event } from "../constants/Event";
                   description={val.description}
                   price={val.price}
                   date={val.date}
+                  isOrganizer={true}
                 />
-              </a>
+              </>
             ))
         }
       </div>
     </div>
-  </main>
+  </div>
 </Layout>

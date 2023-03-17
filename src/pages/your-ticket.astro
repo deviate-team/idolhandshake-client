@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Ticket from "../components/Ticket.jsx";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout title="your-ticket">
+  <Navbar />
+
+  <div class="text-white">
+    <h1 class="text-6xl px-24 pt-6">Your Ticket</h1>
+    <div class="mx-auto my-20 flex justify-center">
+      <div class="flex flex-col items-center w-1/2">
+        <Ticket
+          dueDate="TUESDAY JUNE 29TH 2021"
+          place="Kingmongkut School"
+          timeInterval="8:00 PM TO 11:00 PM"
+          title="OHM HAND SHAKE 5s"
+          imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
+          quantity="50"
+          price="100"
+          isOwner={true}
+          id="13548646548694"
+          client:load
+        />
+        <Ticket
+          dueDate="TUESDAY JUNE 29TH 2021"
+          place="Kingmongkut School"
+          timeInterval="8:00 PM TO 11:00 PM"
+          title="OHM HAND SHAKE 5s"
+          imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
+          quantity="50"
+          price="100"
+          isOwner={true}
+          id="56465465464"
+          client:load
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

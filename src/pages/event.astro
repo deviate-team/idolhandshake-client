@@ -1,22 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import Ticket from "../components/Ticket.astro";
+import Ticket from "../components/Ticket.jsx";
 ---
 
 <Layout title="ticketdetail">
   <div class="font-Kanit text-white">
     <Navbar />
-    <div class="fixed z-0 w-full">
+    <div class="fixed z-0 -mt-4 w-full">
       <div
         class="absolute h-[300px] w-full opacity-20 bg-[url('https://mpics.mgronline.com/pics/Images/566000001310502.JPEG')] bg-cover"
       >
       </div>
     </div>
     <div
-      class="flex flex-col lg:flex-row justify-center items-center absolute z-10 w-full lg:top-64"
+      class="flex flex-col lg:flex-row justify-center items-center absolute z-10 w-full lg:top-32"
     >
-      <!-- Left -->
       <div class="w-4/6 lg:w-1/4 mr-10">
         <img
           src="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
@@ -37,7 +36,6 @@ import Ticket from "../components/Ticket.astro";
           </div>
         </div>
       </div>
-      <!-- Right -->
       <div class="w-4/6 lg:w-1/2 lg:p-6">
         <h1 class="text-5xl font-bold my-8">OHM HAND SHAKE</h1>
         <div class="flex flex-col justify-center">
@@ -49,6 +47,33 @@ import Ticket from "../components/Ticket.astro";
             imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
             quantity="50"
             price="100"
+            isOwner={false}
+            id="#56465465464"
+            client:only
+          />
+          <Ticket
+            dueDate="TUESDAY JUNE 29TH 2021"
+            place="Kingmongkut School"
+            timeInterval="8:00 PM TO 11:00 PM"
+            title="OHM HAND SHAKE 5s"
+            imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
+            quantity="50"
+            price="100"
+            isOwner={false}
+            id="#56465465464"
+            client:only
+          />
+          <Ticket
+            dueDate="TUESDAY JUNE 29TH 2021"
+            place="Kingmongkut School"
+            timeInterval="8:00 PM TO 11:00 PM"
+            title="OHM HAND SHAKE 5s"
+            imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
+            quantity="50"
+            price="100"
+            isOwner={false}
+            id="#56465465464"
+            client:only
           />
         </div>
       </div>
