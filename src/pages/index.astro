@@ -17,14 +17,16 @@ import { Event } from '../constants/Event';
         {
           Event &&
             Event.map((val, index) => (
-              <Card
-                key={index}
-                image={val.image}
-                title={val.title}
-                description={val.description}
-                price={val.price}
-                date={val.date}
-              />
+              <a href='/event'>
+                <Card
+                  key={index}
+                  image={val.image}
+                  title={val.title}
+                  description={val.description}
+                  price={val.price}
+                  date={val.date}
+                />
+              </a>
             ))
         }
       </div>
