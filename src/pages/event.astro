@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Ticket from "../components/Ticket.astro";
+---
+
+<Layout title="ticketdetail">
+  <div class="font-Kanit text-white">
+    <Navbar />
+    <div
+      class="absolute z-0 h-[300px] w-full opacity-30 bg-[url('https://mpics.mgronline.com/pics/Images/566000001310502.JPEG')] bg-fixed"
+    >
+    </div>
+    <div class="flex justify-center absolute z-10 top-64">
+      <!-- Left -->
+      <div class="w-1/4 mr-10">
+        <img
+          src="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
+          alt="Sunset in the mountains"
+        />
+        <div class="py-8">
+          <p class="text-sm">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
+            nam illo ab officiis atque, quia ipsum corporis facere obcaecati
+            sapiente numquam. Tenetur aliquam vel possimus nobis quas, eos
+            consectetur neque.
+          </p>
+          <br />
+          <div class="border-t-2 py-2">
+            <h1 class="text-2xl">KMITL</h1>
+            <h1 class="text-base">TUESDAY JUNE 29TH 2021</h1>
+            <h1 class="text-base">8:00 PM TO 11:00 PM</h1>
+          </div>
+        </div>
+      </div>
+      <!-- Right -->
+      <div class="w-1/2 p-6">
+        <h1 class="text-5xl font-bold my-8">Title</h1>
+        <div class="flex flex-col justify-center">
+          <Ticket />
+          <Ticket />
+          <Ticket />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
