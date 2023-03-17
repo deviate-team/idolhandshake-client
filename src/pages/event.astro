@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import Ticket from "../components/Ticket.astro";
+import Ticket from "../components/Ticket.jsx";
 ---
 
 <Layout title="ticketdetail">
@@ -49,6 +49,33 @@ import Ticket from "../components/Ticket.astro";
             imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
             quantity="50"
             price="100"
+            isOwner={false}
+            id="#56465465464"
+            client:only
+          />
+          <Ticket
+            dueDate="TUESDAY JUNE 29TH 2021"
+            place="Kingmongkut School"
+            timeInterval="8:00 PM TO 11:00 PM"
+            title="OHM HAND SHAKE 5s"
+            imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
+            quantity="50"
+            price="100"
+            isOwner={false}
+            id="#56465465464"
+            client:only
+          />
+          <Ticket
+            dueDate="TUESDAY JUNE 29TH 2021"
+            place="Kingmongkut School"
+            timeInterval="8:00 PM TO 11:00 PM"
+            title="OHM HAND SHAKE 5s"
+            imageUrl="https://mpics.mgronline.com/pics/Images/566000001310502.JPEG"
+            quantity="50"
+            price="100"
+            isOwner={false}
+            id="#56465465464"
+            client:only
           />
         </div>
       </div>

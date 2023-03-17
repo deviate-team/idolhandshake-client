@@ -1,0 +1,23 @@
+---
+const { title, name } = Astro.props;
+---
+
+<tr class="bg-gray-500 m-10">
+  <div>
+    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-black">
+      {title}
+    </td>
+    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-black">
+      {name}
+    </td>
+    <td class="px-6 py-4"
+      ><button class="bg-fouth-color p-1 rounded hover:bg-second-color mr-5">
+        <a
+          href="/"
+          class="inline-block text-base px-4 py-2 leading-none text-white mt-0"
+          >Edit</a
+        >
+      </button>
+    </td>
+  </div>
+</tr>

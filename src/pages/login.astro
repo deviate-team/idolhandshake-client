@@ -11,6 +11,7 @@ import Layout from "../layouts/Layout.astro";
           <label class="block mb-2 text-second-color">Email</label>
           <input
             class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+            id="username"
             type="email"
             placeholder="Ex. test@email.com"
           />
@@ -19,6 +20,7 @@ import Layout from "../layouts/Layout.astro";
           <label class="block mb-2 text-second-color">Password</label>
           <input
             class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+            id="password"
             type="password"
             placeholder="******************"
           />
@@ -27,6 +29,7 @@ import Layout from "../layouts/Layout.astro";
           <button
             class="w-full px-4 py-2 font-bold text-white bg-second-color rounded-full hover:bg-third-color focus:outline-none focus:shadow-outline"
             type="button"
+            onclick="login()"
           >
             Login
           </button>
