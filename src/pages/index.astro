@@ -16,8 +16,9 @@ import { Event } from '../constants/Event';
       >
         {
           Event &&
-            Event.map((val) => (
+            Event.map((val, index) => (
               <Card
+                key={index}
                 image={val.image}
                 title={val.title}
                 description={val.description}

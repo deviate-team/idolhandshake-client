@@ -26,124 +26,11 @@ const CreateForm = () => {
     <div class='flex items-center justify-center p-12'>
       <div class='mx-auto w-full max-w-[550px] bg-white rounded-xl'>
         <form class='py-6 px-9'>
-          <div class='mb-5'>
-            <label class='mb-3 block text-base font-medium text-[#07074D]'>
-              Event Title
-            </label>
-            <input
-              type='text'
-              placeholder='Enter Title'
-              class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
-            />
-          </div>
-          <div class='mb-5'>
-            <label class='mb-3 block text-base font-medium text-[#07074D]'>
-              Event Description
-            </label>
-            <input
-              type='text'
-              placeholder='Enter Description'
-              class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
-            />
-          </div>
-
-          {tickets.map((singleService, index) => (
-            <div key={index} className='services'>
-              <div class='flex flex-wrap -mx-3 mb-2'>
-                <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
-                  <label class='mb-3 block text-base font-medium text-[#07074D]'>
-                    Category Title
-                  </label>
-                  <input
-                    name='title'
-                    type='text'
-                    value={singleService.title}
-                    onChange={(e) => handleServiceChange(e, index)}
-                    required
-                    class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
-                  />
-                </div>
-                <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
-                  <label class='mb-3 block text-base font-medium text-[#07074D]'>
-                    Price
-                  </label>
-                  <input
-                    name='price'
-                    type='number'
-                    value={singleService.price}
-                    onChange={(e) => handleServiceChange(e, index)}
-                    required
-                    class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
-                  />
-                </div>
-                <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
-                  <label class='mb-3 block text-base font-medium text-[#07074D]'>
-                    Quantity
-                  </label>
-                  <input
-                    name='quantity'
-                    type='text'
-                    value={singleService.quantity}
-                    onChange={(e) => handleServiceChange(e, index)}
-                    required
-                    class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
-                  />
-                </div>
-                {tickets.length - 1 === index && tickets.length < 4 && (
-                  <button
-                    type='button'
-                    onClick={handleServiceAdd}
-                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-3'
-                  >
-                    <span>Add a Tickets</span>
-                  </button>
-                )}
-              </div>
-              <div>
-                {tickets.length !== 1 && (
-                  <button
-                    type='button'
-                    onClick={() => handleServiceRemove(index)}
-                    className='bg-fouth-color hover:bg-second-color text-white font-bold py-2 px-4 rounded-full'
-                  >
-                    <span>Remove Tickets</span>
-                  </button>
-                )}
-              </div>
-            </div>
-          ))}
-          <div class='flex flex-wrap -mx-3 mb-2'>
-            <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
-              <label class='mb-3 block text-base font-medium text-[#07074D]'>
-                Date
-              </label>
-              <input
-                type='date'
-                class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
-              />
-            </div>
-            <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
-              <label class='mb-3 block text-base font-medium text-[#07074D]'>
-                Start Time
-              </label>
-              <input
-                type='time'
-                class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
-              />
-            </div>
-            <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
-              <label class='mb-3 block text-base font-medium text-[#07074D]'>
-                End Time
-              </label>
-              <input
-                type='time'
-                class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
-              />
-            </div>
-          </div>
-
+          <h1 className='text-2xl text-main-color font-medium mb-6'>
+            Event Information
+          </h1>
           <div class='mb-6 pt-4'>
-            <label class='mb-5 block text-xl font-semibold text-[#07074D]'>
+            <label class='mb-5 block text-base font-semibold text-[#07074D]'>
               Upload Image File
             </label>
 
@@ -167,8 +54,127 @@ const CreateForm = () => {
               </label>
             </div>
           </div>
+          <div class='mb-5'>
+            <label class='mb-3 block text-base font-medium text-[#07074D]'>
+              Event Title
+            </label>
+            <input
+              type='text'
+              placeholder='Enter Title'
+              class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+            />
+          </div>
+          <div class='mb-5'>
+            <label class='mb-3 block text-base font-medium text-[#07074D]'>
+              Event Description
+            </label>
+            <input
+              type='text'
+              placeholder='Enter Description'
+              class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+            />
+          </div>
+          <h1 className='text-2xl text-main-color font-medium pt-6 mb-6'>
+            Ticket Information
+          </h1>
+          {tickets.map((singleService, index) => (
+            <div key={index}>
+              <div class='flex flex-wrap -mx-3 mb-2 mt-6'>
+                <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+                  <label class='mb-3 block text-base font-medium text-[#07074D]'>
+                    Ticket Title
+                  </label>
+                  <input
+                    name='title'
+                    type='text'
+                    value={singleService.title}
+                    onChange={(e) => handleServiceChange(e, index)}
+                    required
+                    class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+                  />
+                </div>
+                <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+                  <label class='mb-3 block text-base font-medium text-[#07074D]'>
+                    Ticket Price
+                  </label>
+                  <input
+                    name='price'
+                    type='number'
+                    value={singleService.price}
+                    onChange={(e) => handleServiceChange(e, index)}
+                    required
+                    class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+                  />
+                </div>
+                <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+                  <label class='mb-3 block text-base font-medium text-[#07074D]'>
+                    Ticket Quantity
+                  </label>
+                  <input
+                    name='quantity'
+                    type='text'
+                    value={singleService.quantity}
+                    onChange={(e) => handleServiceChange(e, index)}
+                    required
+                    class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+                  />
+                </div>
+                <div className='flex justify-item-center'>
+                  {tickets.length !== 1 && (
+                    <button
+                      type='button'
+                      onClick={() => handleServiceRemove(index)}
+                      className='bg-gray-300 hover:bg-gray-400 text-white text-sm font-bold py-1 px-3 rounded-full mt-4'
+                    >
+                      <span className='text-gray-500 hover:text-white'>
+                        Remove Tickets
+                      </span>
+                    </button>
+                  )}
+                </div>
+                {tickets.length - 1 === index && tickets.length < 4 && (
+                  <button
+                    type='button'
+                    onClick={handleServiceAdd}
+                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-3 w-full my-4'
+                  >
+                    <span>Add a Tickets</span>
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+          <div class='flex flex-wrap -mx-3 mb-2'>
+            <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+              <label class='mb-3 block text-base font-medium text-[#07074D]'>
+                Event Date
+              </label>
+              <input
+                type='date'
+                class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+              />
+            </div>
+            <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+              <label class='mb-3 block text-base font-medium text-[#07074D]'>
+                Event Start Time
+              </label>
+              <input
+                type='time'
+                class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+              />
+            </div>
+            <div class='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+              <label class='mb-3 block text-base font-medium text-[#07074D]'>
+                Event End Time
+              </label>
+              <input
+                type='time'
+                class='w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md'
+              />
+            </div>
+          </div>
           <div>
-            <button class='hover:shadow-form hover:bg-second-color w-full rounded-md bg-fouth-color py-3 px-8 text-center text-base font-semibold text-white outline-none'>
+            <button class='mt-4 hover:shadow-form hover:bg-second-color w-full rounded-md bg-fouth-color py-3 px-8 text-center text-base font-semibold text-white outline-none'>
               Create Event
             </button>
           </div>
