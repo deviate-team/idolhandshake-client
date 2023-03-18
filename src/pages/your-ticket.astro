@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Navbar from "../components/Navbar.jsx";
+import RenderTicket from "../components/RenderTicket";
+---
+
+<Layout title="your-ticket">
+  <Navbar client:only />
+
+  <div class="text-white">
+    <h1 class="text-6xl px-24 pt-6">Your Ticket</h1>
+    <div class="mx-auto my-20 flex justify-center">
+      <div class="flex flex-col items-center w-1/2">
+        <RenderTicket client:only />
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,66 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.jsx";
+import Ticket from "../../components/Ticket.jsx";
+
+const { id } = Astro.params;
+
+const response = await fetch(`http://localhost:3000/event/${id}`);
+
+const data = await response.json();
+const { event } = data;
+console.log(event);
+---
+
+<Layout title="ticketdetail">
+  <div class="font-Kanit text-white">
+    <Navbar client:only />
+    <div class="fixed z-0 top-0 right-0s -mt-4 w-full">
+      <img src={event.event_image} class="blur-lg saturate-200" />
+    </div>
+  </div>
+  <div
+    class="flex flex-col lg:flex-row justify-center items-center absolute z-10 w-full lg:top-32"
+  >
+    <div class="w-4/6 lg:w-1/4 mr-10">
+      <img src={event.event_image} alt="Sunset in the mountains" />
+      <div class="py-8">
+        <p class="text-sm">
+          {event.event_description}
+        </p>
+        <br />
+        <div class="border-t-2 py-2">
+          <h1 class="text-2xl font-kanit">{event.event_location}</h1>
+          <h1 class="text-base">{event.event_date}</h1>
+          <h1 class="text-base">{event.event_time}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="w-4/6 lg:w-1/2 lg:p-6">
+      <h1 class="text-5xl font-bold my-8 text-fouth-color">
+        {event.event_title}
+      </h1>
+      <div class="flex flex-col justify-center">
+        {
+          event.tickets.map((ticket) => {
+            return (
+              <Ticket
+                eventId={event._id}
+                title={ticket.ticket_name}
+                dueDate={event.event_date}
+                place={event.event_location}
+                timeInterval={event.event_time}
+                imageUrl={event.event_image}
+                quantity={ticket.ticket_quantity}
+                price={ticket.price}
+                isOwner={false}
+                ticket_id={ticket.ticket_id}
+                client:only
+              />
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</Layout>

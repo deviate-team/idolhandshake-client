@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { Event } from "../constants/Event";
+---
+
+<Layout title="event-manage">
+  <div class="text-white">
+    <h1 class="text-6xl px-24 pt-6">Your Events</h1>
+    <div class="container mx-auto my-20 flex justify-center">
+      <div
+        class="grid grid-flow-row gap-8 justify-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
+      >
+        {
+          Event &&
+            Event.map((val, index) => (
+              <>
+                <Card
+                  key={index}
+                  image={val.image}
+                  title={val.title}
+                  description={val.description}
+                  price={val.price}
+                  date={val.date}
+                  isOrganizer={true}
+                />
+                <Card
+                  key={index}
+                  image={val.image}
+                  title={val.title}
+                  description={val.description}
+                  price={val.price}
+                  date={val.date}
+                  isOrganizer={true}
+                />
+              </>
+            ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
