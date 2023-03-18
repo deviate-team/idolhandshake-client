@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar.jsx";
 import EventForm from "../components/EventForm";
 ---
 
 <Layout title="Create Event">
-  <Navbar />
+  <Navbar client:only />
   <EventForm isEdit={false} client:only />
 </Layout>
