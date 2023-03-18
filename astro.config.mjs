@@ -7,4 +7,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   server: { port: 1234, host: true },
+  output: "server"
 });
