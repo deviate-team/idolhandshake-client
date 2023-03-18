@@ -19,6 +19,7 @@ export default function RenderTicket() {
 
   React.useEffect(() => {
     getTicketOwner();
+    console.log(tickets);
   }, []);
 
   return (
@@ -28,7 +29,7 @@ export default function RenderTicket() {
           {tickets.map((ticket) => (
             <Ticket
               key={ticket._id}
-              id={ticket.id}
+              ticket_id={ticket.ticket_id}
               title={ticket.ticket_name}
               imageUrl={ticket.image}
               eventId={ticket.event_id}

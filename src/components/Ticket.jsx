@@ -11,7 +11,7 @@ export default function Ticket({
   quantity,
   price,
   isOwner,
-  id,
+  ticket_id,
 }) {
   const [ticketQty, setTicketQty] = useState(1);
   const increaseTicketQty = () => {
@@ -30,7 +30,7 @@ export default function Ticket({
         "http://localhost:3000/ticket",
         {
           event_id: eventId,
-          ticket_id: id,
+          ticket_id: ticket_id,
           quantity: ticketQty,
         },
         {
@@ -66,31 +66,31 @@ export default function Ticket({
           </div>
           {isOwner && (
             <div className="m-auto">
-              <QRCodeSVG value={id} />
+              <QRCodeSVG value={ticket_id} />
             </div>
           )}
         </div>
         <div className="flex justify-center text-gray-900 h-48 font-bold">
           <div
-            className={`flex flex-col w-full py-1 h-full justify-around items-center`}
+            className={`flex flex-col w-full h-full justify-around items-center`}
           >
             <img
               src={imageUrl}
               alt="ticket"
-              className="w-full h-full object-cover rounded -z-0"
+              className="w-full h-48 object-cover rounded p-4 z-0"
             />
             {isOwner ? (
               <>
                 <div className="h-full w-full relative ">
-                  <p className="absolute right-4 -top-10 text-white text-xl font-light shadow-md z-30">
-                    #{id}
-                  </p>
+                  <span className="absolute right-4 text-gray-800 text-xl font-light z-20">
+                    #{ticket_id}
+                  </span>
                 </div>
               </>
             ) : (
               <div className="h-full w-full relative">
-                <p className="absolute right-8 -top-20 text-base shadow-md z-20 ">
-                  Avalialble : {quantity}
+                <p className="absolute right-8 -top-20 text-neutral-900 text-base shadow-md z-20 ">
+                  Available : {quantity}
                 </p>
                 <div className="flex items-center justify-between absolute bottom-1  left-2 h-5 w-16 text-black bg-white text-lg px-2">
                   <button onClick={decreaseTicketQty}>-</button>
